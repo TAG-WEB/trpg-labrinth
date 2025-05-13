@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[길드설연]미궁 속으로</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <p id="question-text"></p>
+    <input type="text" id="answer-input" placeholder="정답을 입력하세요"/>
+    <button onclick="submitAnswer()">제출</button>
+    <button onclick="showHint()">힌트 보기</button>
+    <p id="hint"></p>
+    <p>힌트 사용: <span id="hint-count">0</span> / 시간: <span id="timer">0</span>초</p>
+  </div>
+  <script src="js/scene.js"></script>
+</body>
+</html>
