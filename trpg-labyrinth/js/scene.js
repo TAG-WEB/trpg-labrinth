@@ -65,10 +65,22 @@ window.onload = async () => {
   scenes = await res.json();
   const current = scenes[sceneIndex];
   if (current.type === "naration") {
+	setSceneImage(current.image);
     typeWriter(current.text, "narration");
   } else if (current.type === "question") {
-    document.getElementById("question-text").textContent = current.question;
+    setSceneImage(current.image);
+	document.getElementById("question-text").textContent = current.question;
     document.getElementById("hint-count").textContent = hintCount;
     setInterval(updateTimer, 1000);
+  }
+}
+
+function setSceneImage(imageName) {
+  const imgEl = document.getElementById("scene-image");
+  if (imgEl && imageName) {
+    imgEl.src = `assets/images/${imageName}`;
+    imgEl.style.display = "block";
+  } else if (imgEl) {
+    imgEl.style.display = "none";
   }
 };
